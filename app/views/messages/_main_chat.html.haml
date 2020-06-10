@@ -1,0 +1,37 @@
+.main_chat
+  .main_chat__group-info
+    .top-items
+      .top-items__group-list
+        .group-name
+          test
+        .group-member
+          %ul.group-member__tytle
+            Member：
+            %li.group-member__list
+              masa
+      .top-items__edit-btn
+        %form
+          %input{type: "submit" , class: 'submit-btn'}
+  .main_chat__message-field
+    .message-info
+      .message-info__name
+        masa
+      .message-info__time
+        2020/6/10/(wed)
+    .message-content
+      おはよう
+    .message-info
+      .message-info__name
+        masa
+      .message-info__time
+        2020/6/10/(wed)
+    .message-content
+      おはよう
+  .main_chat__message-form
+    %form.new__message
+      .input-form
+        %input{type: "text", class: "input-form__text", placeholder: "typ a message"}
+        %label{class: "input-form__image"}
+          = icon('fas','image')
+          %input{type: "file",class: "input-form__image__file"} 
+      %input{type:"submit", class: "output-btn"}
