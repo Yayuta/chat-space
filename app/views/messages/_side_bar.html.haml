@@ -5,18 +5,16 @@
         = current_user.name
       %ul.top-items__icons
         %li.top-items__icons__edit
-          = link_to"#" ,class: "edit" do
+          = link_to new_group_path() do
             = icon('fas','edit')
         %li.top-items__icons__cog
-          = link_to edit_user_path(current_user),class:"cog" do
+          = link_to edit_user_path(current_user),class: 'cog' do
             = icon('fas','cog')
   .side_bar__group-list
-    .group
-      .group__name
-        texhcamp
-      .group__text
-        まだメーッセージがありません
-      .group__name
-        texhcamp
-      .group__text
-        まだメーッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__text
+            まだメーッセージがありません
