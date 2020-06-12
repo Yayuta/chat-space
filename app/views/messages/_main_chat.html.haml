@@ -11,7 +11,7 @@
               masa
       .top-items__edit-btn
         %form
-          %input{type: "submit" , class: 'submit-btn'}
+          %input{type: "submit" , class: 'submit-btn',value: 'Edit'}
   .main_chat__message-field
     .message-info
       .message-info__name
@@ -34,4 +34,4 @@
         %label{class: "input-form__image"}
           = icon('fas','image')
           %input{type: "file",class: "input-form__image__file"} 
-      %input{type:"submit", class: "output-btn"}
+      %input{type:"submit", class: "output-btn",value: 'Send'}
