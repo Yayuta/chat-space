@@ -21,17 +21,21 @@
       width: 260px;
       display: flex;
       justify-content: space-between;
+      color: #ffffff;
       &__name{
         font-size: 16px;
       }
       &__icons{
         width: 60px;
-        text-decoration: none;
+        list-style: none;
         display: flex;
         justify-content: flex-end;
-        color: #ffffff;
-          .fa-edit{
-            margin-right: 5px;
+        .edit{
+          color: #ffffff;
+        }
+        .cog{
+            margin-left: 5px;
+            color: #ffffff;
           }
       }
     }    
