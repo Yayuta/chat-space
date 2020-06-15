@@ -13,13 +13,7 @@
         %form
           %input{type: "submit" , class: 'submit-btn',value: 'Edit'}
   .main_chat__message-field
-    .message-info
-      .message-info__name
-        masa
-      .message-info__time
-        2020/6/10/(wed)
-    .message-content
-      おはよう
+    =render @messages
     .message-info
       .message-info__name
         masa
@@ -28,10 +22,10 @@
     .message-content
       おはよう
   .main_chat__message-form
-    %form.new__message
+    = form_with model: [@group, @message], html: {class: "new__message"}, lobal: true do |f|
       .input-form
-        %input{type: "text", class: "input-form__text", placeholder: "typ a message"}
-        %label{class: "input-form__image"}
+        = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-form__image' do
           = icon('fas','image')
-          %input{type: "file",class: "input-form__image__file"} 
-      %input{type:"submit", class: "output-btn",value: 'Send'}
+          = f.file_field :image, class: 'input-form__image__file'
+      = f.submit 'Send', class: 'output-btn'
