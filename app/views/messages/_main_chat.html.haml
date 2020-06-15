@@ -10,8 +10,8 @@
             %li.group-member__list
               masa
       .top-items__edit-btn
-        %form
-          %input{type: "submit" , class: 'submit-btn'}
+        = link_to edit_group_path(@group), class: 'submit-btn' do
+          Edit
   .main_chat__message-field
     .message-info
       .message-info__name
