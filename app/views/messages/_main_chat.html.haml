@@ -3,12 +3,12 @@
     .top-items
       .top-items__group-list
         .group-name
-          test
+          = @group.name
         .group-member
           %ul.group-member__tytle
             Member：
             %li.group-member__list
-              masa
+              = @group.users.pluck(:name).join(",")
       .top-items__edit-btn
         %form
           %input{type: "submit" , class: 'submit-btn',value: 'Edit'}
@@ -16,11 +16,8 @@
     =render @messages
     .message-info
       .message-info__name
-        masa
       .message-info__time
-        2020/6/10/(wed)
     .message-content
-      おはよう
   .main_chat__message-form
     = form_with model: [@group, @message], html: {class: "new__message"}, lobal: true do |f|
       .input-form
