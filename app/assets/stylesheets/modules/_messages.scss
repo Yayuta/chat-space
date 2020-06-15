@@ -88,15 +88,20 @@
           }
         }
       &__edit-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .submit-btn{
           color: #38aef0;
           border: 1px solid #38aef0;
-          background-color: #ffffff;
           font-size: 16px;
           height: 40px;
           width: 72px;
-          margin: 28px 0 32px 0;
           border-radius: 0px;
+          text-decoration: none;
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
         }
       }
     }
