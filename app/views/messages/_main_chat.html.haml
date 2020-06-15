@@ -10,8 +10,8 @@
             %li.group-member__list
               = @group.users.pluck(:name).join(",")
       .top-items__edit-btn
-        %form
-          %input{type: "submit" , class: 'submit-btn',value: 'Edit'}
+        = link_to edit_group_path(@group), class: 'submit-btn' do
+          Edit
   .main_chat__message-field
     =render @messages
     .message-info
