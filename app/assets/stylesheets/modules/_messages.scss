@@ -107,6 +107,7 @@
     }
   }
   &__message-field{
+    overflow: scroll;
     height: calc(100vh - 90px - 100px);
     background-color: #fafafa;
     padding: 35px 0 0 40px;
