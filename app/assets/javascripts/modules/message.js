@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="MessageBox">
+        `<div class="MessageBox" data-message-id=${message.id}>
           <div class="MessageInfo">
             <div class="MessageInfo__userName">
               ${message.user_name}
@@ -22,7 +22,7 @@ $(function(){
     }
     else{
       let html =
-        `<div class="MessageBox">
+        `<div class="MessageBox" data-message-id=${message.id}>
           <div class="MessageInfo">
             <div class="MessageInfo__userName">
               ${message.user_name}
@@ -41,12 +41,13 @@ $(function(){
     };
   }
   $('.new__message').on('submit', function(e){
+    console.log(1)
     e.preventDefault()
     let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
-      url: url,  //同期通信でいう『パス』
-      type: 'POST',  //同期通信でいう『HTTPメソッド』
+      url: url,  
+      type: 'POST', 
       data: formData,  
       dataType: 'json',
       processData: false,
@@ -55,11 +56,13 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.main_chat__message-field').append(html);
-      $('.main_chat__message-field').animate({ scrollTop: $('.main_chat__message-field')[0].scrollHeight});
       $('.new__message')[0].reset();
+      $('.main_chat__message-field').animate({ scrollTop: $('.main_chat__message-field')[0].scrollHeight});
+      $('.output-btn').prop("disabled", false);
     })
-    .fail(function(){
+    .fail(function() {
       alert("メッセージの送信に失敗しました");
+      $('.output-btn').prop("disabled", false);
     });
   });
 });
