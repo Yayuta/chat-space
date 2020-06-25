@@ -14,12 +14,8 @@
           Edit
   .main_chat__message-field
     =render @messages
-    .message-info
-      .message-info__name
-      .message-info__time
-    .message-content
   .main_chat__message-form
-    = form_with model: [@group, @message], html: {class: "new__message"}, lobal: true do |f|
+    = form_with model: [@group, @message], html: {class: "new__message"}, local: true do |f|
       .input-form
         = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
         = f.label :image, class: 'input-form__image' do
